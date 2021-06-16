@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  sudo: true
+
+  tasks:
+
+    - name: Set firewall rule
+      ufw: rule={{rule}} port={{port}}
+
+    - name: Check firewall rules
+      shell: ufw status verbose
