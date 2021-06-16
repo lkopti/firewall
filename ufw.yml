@@ -3,12 +3,10 @@
   hosts: localhost
   become: true
 
-  tasks:
+- name: Set firewall rule
+  ufw: 
+     rule: "{{ rule }}"
+     name: "{{ name }}"
 
-    - name: Set firewall rule
-      ufw: 
-        rule: "{{ rule }}"
-        name: "{{ name }}"
-
-    - name: Check firewall rules
-      shell: ufw status verbose
+- name: Check firewall rules
+  shell: ufw status verbose
