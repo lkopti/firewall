@@ -7,8 +7,8 @@
 
     - name: Set firewall rule
       ufw: 
-        rule: {{ rule }}
-        name: {{ name }}
+        rule: "{{ rule }}"
+        name: "{{ name }}"
 
     - name: Check firewall rules
       shell: ufw status verbose
