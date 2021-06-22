@@ -5,9 +5,7 @@
 
   tasks:
     - name: Set firewall rule
-      community.general.ufw: 
-        rule: "{{ rule }}"
-        port: "{{ port }}"
+      shell: "ufw {{ rule }} {{ port }}"
 
     - name: Check firewall rules
       shell: ufw status verbose
